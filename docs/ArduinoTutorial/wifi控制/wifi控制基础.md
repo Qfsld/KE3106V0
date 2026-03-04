@@ -129,26 +129,61 @@
 
 ## 2.2.1.6 UNO发送数据到ESP01-S模块的格式
 
+发送数据方式就是通过串口打印将数据发送到串口上，然后ESP01-S就会通过串口读取数据。
 
+发送数据格式：`传感器名称（已经再库的内部定义好不能更改）:传感器数据值`
+
+水滴传感器数据发送代码：
 
 ```c
-  // 发送传感器数据
-  // Serial.print("WATER:");
-  // Serial.println(waterLevel);
-  // Serial.print("TEMP:");
-  // Serial.println(temperature, 1);
-  // Serial.print("HUM:");
-  // Serial.println(humidity, 1);
-  // Serial.print("LIGHT:");
-  // Serial.println(lightLevel);
-  // Serial.print("ULTRA:");
-  // Serial.println(distance, 1);
-  // Serial.print("SMOKE:");
-  // Serial.println(smokeValue);
-  // Serial.print("ALCOHOL:");
-  // Serial.println(alcoholValue);
-  // Serial.print("SOIL:");
-  // Serial.println(soilMoisture);
-  // Serial.print("POT:");
-  // Serial.println(potentiometer);
+Serial.println("WATER:"+ String(WaterValue));
 ```
+
+DHT11温度数据发送代码：
+
+```c
+ Serial.println("TEMP:" + String(TemperialValue));
+```
+
+DHT11湿度数据发送代码：
+
+```c
+ Serial.println("HUM:" + String(HumidityValue));
+```
+
+光敏传感器数据发送代码：
+
+```c
+ Serial.println("LIGHT:" + String(LightValue));
+```
+
+超声波传感器距离数据发送代码：
+
+```c
+ Serial.println("ULTRA:" + String(DistanceValue));
+```
+
+烟雾传感器数据发送代码：
+
+```c
+ Serial.println("SMOKE:" + String(SmokeValue));
+```
+
+酒精传感器数据发送代码：
+
+```c
+ Serial.println("ALCOHOL:" + String(AlcoholValue));
+```
+
+土壤湿度传感器数据发送代码：
+
+```c
+ Serial.println("SOIL:" + String(SoilValue));
+```
+
+电位器数据发送代码：
+
+```c
+ Serial.println("POT:" + String(PotentiometerValue));
+```
+
