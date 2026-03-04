@@ -52,13 +52,25 @@
 
 ![a32](./media/a32.png)
 
-④ 打开我们提供的代码文件，这里我们以控制LED灯课程代码为例：打开课程代码文件中的`ESP01-S代码`文件中的代码文件“控制LED灯ESP01-S代码.mix” 
+④ 添加库文件，点击Mixly页面右上角的`设置`-->`库管理`再点击`导入库`右侧的![a74](./media/a74.png) 找到下载好的`file`文件夹并进入`库文件`夹中选择`index.xml`库文件。
+
+<span style="color:red;font-size:25px;">一定要添加库文件否则代码将报错！！！</span>
+
+![a78](./media/a78.png)
+
+![a79](./media/a79.png)
+
+![a80](./media/a80.png)
+
+![a81](./media/a81.png)
+
+⑤ 打开我们提供的代码文件，这里我们以控制LED灯课程代码为例：打开课程代码文件中的`ESP01-S代码`文件中的代码文件“控制LED灯ESP01-S代码.mix” 
 
 <span style="color:red;">注意：你需要将WiFi的SSID名称改成你的WiFi名称还有你的WiFi密码，并且你的wifi频率必须是2.4GHz的否则ESP01-S将连接不上wifi。</span>
 
 ![a33](./media/a33.png)
 
-⑤ 打开代码文件后选择正确的USB转ESP-01S WIFI模块端口号点击上传即可
+⑥ 打开代码文件后选择正确的USB转ESP-01S WIFI模块端口号点击上传即可
 
 
 
