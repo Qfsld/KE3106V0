@@ -22,6 +22,11 @@ void setup() {
 
   // 初始化软串口，用于与语音模块通信，波特率9600（标准值）
   mySerial.begin(9600);
+
+  //配置模拟PW
+  SoftPWMBegin();
+  SoftPWMSet(EN_Pin, 0);
+  SoftPWMSetFadeTime(EN_Pin, 1000, 1000);
 }
 
 void loop() {

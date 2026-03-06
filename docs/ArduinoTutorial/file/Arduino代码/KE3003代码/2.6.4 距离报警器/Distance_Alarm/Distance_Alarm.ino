@@ -4,8 +4,8 @@
 // 创建软串口对象，使用A5作为RX引脚接收数据，A4作为TX引脚发送数据
 SoftwareSerial mySerial(A5, A4);
 
-// 定义变量用于存储从语音模块接收到的单个字符
-char Voice_Control = '\0';  // 初始化为空字符，比空字符串更合适
+// 定义变量用于存储从语音模块接收到的控制码
+volatile int Voice_Control = 0;  // 初始化为0，确保首次判断时不触发任何指令
 
 // 定义传感器连接的引脚号
 int EchoPin = 13;  //Echo引脚接D13
@@ -70,7 +70,7 @@ void loop() {
   int distance = checkdistance();
   //限制测距范围为2-250CM，如果超出就设置距离值为0
   if (distance < 2 || distance >= 250) {
-    distamce = 0;
+    distance = 0;
     delay(100);
   }
 
@@ -85,7 +85,7 @@ void loop() {
 
   //通过变量判断传感器是否出发，如果出发则发出警报提示
   if (distance <= 20) {
-    // 消息号为10，两个数据参数都为0
+    // 消息号为12，两个数据参数都为0
     Uart_SendCmd(12, distance, 0);
     delay(10 * 1000);
   }
