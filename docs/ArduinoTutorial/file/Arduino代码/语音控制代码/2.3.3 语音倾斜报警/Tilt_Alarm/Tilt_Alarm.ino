@@ -7,8 +7,8 @@ SoftwareSerial mySerial(A5, A4);
 // 定义倾斜传感器连接的引脚号
 int TiltPin = 3;
 
-// 定义变量用于存储从语音模块接收到的单个字符
-char Voice_Control = '\0';  // 初始化为空字符，比空字符串更合适
+// 定义变量用于存储从语音模块接收到的控制码
+volatile int Voice_Control = 0;  // 初始化为0，确保首次判断时不触发任何指令
 
 /*
  函数功能：通过串口发送具有固定帧格式的数据包

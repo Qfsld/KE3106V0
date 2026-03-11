@@ -6,8 +6,9 @@
 SoftwareSerial mySerial(A5, A4);
 // 定义LED连接的引脚号（数字引脚3）
 int ledPin = 3;
-// 定义变量用于存储从语音模块接收到的单个字符
-char Voice_Control = '\0';  // 初始化为空字符，比空字符串更合适
+
+// 定义变量用于存储从语音模块接收到的控制码
+volatile int Voice_Control = 0;  // 初始化为0，确保首次判断时不触发任何指令
 
 void setup() {
   // 初始化硬件串口，用于调试输出，波特率9600
@@ -36,5 +37,5 @@ void loop() {
     digitalWrite(ledPin, LOW);
   }
   // 清除指令，避免重复执行
-  Voice_Control = '\0';
+  Voice_Control = 0;
 }
