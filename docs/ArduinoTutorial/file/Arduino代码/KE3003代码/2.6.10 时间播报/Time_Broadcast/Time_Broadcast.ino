@@ -57,6 +57,10 @@ void loop() {
   int hour = Rtc.GetDateTime().Hour();
   int min = Rtc.GetDateTime().Minute();
 
+  Serial.print(hour);
+  Serial.print(":");
+  Serial.println(min);
+
   // 持续检查软串口是否有来自语音模块的数据
   while (mySerial.available()) {
     // 读取一个字节的数据
