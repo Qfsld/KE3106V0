@@ -60,7 +60,7 @@ void loop() {
     Serial.println(Voice_Control);
   }
 
-  //通过变量判断传感器是否触发，如果出发则发出警报提示
+  //通过变量判断传感器是否触发，如果触发则发出警报提示
   if (SensorValue == 1) {
     Uart_SendCmd(14, 0, 0);
     delay(10*1000);

@@ -6,7 +6,7 @@ Servo myservo;
 
 //创建DHT11对象
 dht11 DHT;
-#define DHT11_PIN 3  //定义DHT11为数子口3
+#define DHT11_PIN 3  //定义DHT11为数字口3
 
 // 创建软串口对象，使用A5作为RX引脚接收数据，A4作为TX引脚发送数据
 SoftwareSerial mySerial(A5, A4);

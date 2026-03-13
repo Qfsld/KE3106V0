@@ -67,8 +67,8 @@ void setup() {
   // 将引脚设置为输入模式
   pinMode(DHT11_PIN, INPUT);
   pinMode(RedLedPin, OUTPUT);
-  pinMode(GreenLedPin, OUTPut);
-  pinMode(BlueLedPin, OUTPut);
+  pinMode(GreenLedPin, OUTPUT);
+  pinMode(BlueLedPin, OUTPUT);
 }
 
 void loop() {
